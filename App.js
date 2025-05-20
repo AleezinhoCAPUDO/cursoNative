@@ -9,6 +9,7 @@ import { View,
 import { Button } from './src/components/Button';
 import { SkillCard } from './src/components/SkillCard';
 
+
 export default function App(){
   const [newSkill, setNewSkill] = useState('');
   const [mySkills, setMySkills] = useState([]);
@@ -16,11 +17,16 @@ export default function App(){
   function handleAddNewSkill(){
     setMySkills(oldState => [...oldState, newSkill]);
   }
-
+  
+  function handleInputChange(text){
+    console.log(text)
+  }
+  
   return (
     <>
     <View style={ styles.container }>
       <Text style={styles.title}>Bem vindo Cuzão</Text>
+      
     <TextInput 
       style={styles.input}
       placeholder='New Skill'
